@@ -1,6 +1,7 @@
 import React from "react";
 import { User } from "../page";
 import PostData from "../components/PostData";
+import ClearButton from "../components/ClearButton";
 
 const isr = async () => {
   const res = await fetch(
@@ -17,9 +18,14 @@ const isr = async () => {
   );
   const data: User[] = await res.json();
   return (
-    <div>
-      <h2 className="text-center text-xl mb-5">10秒で更新</h2>
-      <PostData data={data} />
+    <div className="flex">
+      <h2 className="text-center text-xl mb-5 flex-1">10秒で更新</h2>
+      <div className="flex-1">
+        <PostData data={data} />
+      </div>
+      <div className="flex-1">
+        <ClearButton />
+      </div>
     </div>
   );
 };
