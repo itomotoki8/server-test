@@ -22,6 +22,13 @@ const Header = () => {
         <Link href="/post" className="hover:text-blue-300">
           POST
         </Link>
+        <Link
+          href="https://github.com/itomotoki8/server-test/tree/main"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          github
+        </Link>
       </div>
     </header>
   );

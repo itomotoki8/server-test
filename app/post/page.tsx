@@ -2,10 +2,12 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { submit } from "@/post";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { toast } from "sonner";
 
-const post = () => {
+const Post = () => {
+  const router = useRouter();
   const touroku = async (formData: FormData) => {
     const status = await submit(formData);
     if (status) {
@@ -13,6 +15,7 @@ const post = () => {
         duration: 3000,
         position: "top-center",
       });
+      router.refresh();
     } else {
       toast.error("登録に失敗しました。", {
         duration: 3000,
@@ -35,4 +38,4 @@ const post = () => {
   );
 };
 
-export default post;
+export default Post;
